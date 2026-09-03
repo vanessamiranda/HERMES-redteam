@@ -49,3 +49,33 @@ can detect failures.
   the methodology.
 
 ## Repository structure
+
+## Running it
+
+```bash
+pip install pyyaml
+
+# macOS / Linux
+export ANTHROPIC_API_KEY=your-key
+# Windows PowerShell
+# $env:ANTHROPIC_API_KEY="your-key"
+
+# 1. Validate the library (no API calls)
+python runner/redteam_runner.py --dry-run
+
+# 2. Execute against the agent's system prompt + model layer
+python runner/redteam_runner.py --target-system-prompt argus_system_prompt.txt
+
+# 3. Human-verify every FAIL transcript in the results JSON
+#    (set "human_confirmed": true where upheld)
+
+# 4. Generate the assurance report
+python report/report_generator.py report/results_<run_id>.json
+```
+
+## Author
+
+Vanessa Miranda, AI governance and digital transformation, Singapore.
+Related work: ARGUS (MAS FEAT and NIST AI RMF mapped KYC agent design)
+and a peer-reviewed retrieval-augmented generation publication
+(PubMed PMID 40776301).
