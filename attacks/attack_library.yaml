@@ -5,7 +5,7 @@
 #
 # Usage: executed by runner/redteam_runner.py against the target agent endpoint.
 # All prompts are standard published-technique test strings for DEFENSIVE
-# evaluation of systems you own or are authorised to test.
+
 
 metadata:
   version: "1.0"
